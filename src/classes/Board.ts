@@ -8,8 +8,9 @@ import Piece, { PIECE_COLORS } from "./Pieces/Piece";
  */
 export default class Board {
   static BOARD_CELLS_NUMBER = 64;
+  static BOARD_CELLS_WIDTH = 8;
 
-  private cells: Cell[] = new Array(Board.BOARD_CELLS_NUMBER);
+  private _cells: Cell[] = [];
   private whiteRemovedPieces: Piece[] = [];
   private blackRemovedPieces: Piece[] = [];
 
@@ -17,15 +18,33 @@ export default class Board {
     this.fillBoard();
   }
 
+  public get cells(): Cell[] {
+    return this._cells;
+  }
+
+  public get renderCells(): Cell[] {
+    return this._cells;
+  }
+
   /**
    * Initiate board pieces with its default values
    */
   fillBoard() {
-    this.cells = this.cells.map((cell, i) => {
-      const piece: Piece = new Pawn(PIECE_COLORS.BLACK);
+    const cells = [];
+    for (let i = 0; i < Board.BOARD_CELLS_NUMBER; i++) {
+      const cellName = cellNames[i];
 
-      return new Cell(cellNames[i], piece);
-    });
+      let piece: Piece | null = null;
+      if (i < 16) {
+        piece = new Pawn(PIECE_COLORS.BLACK);
+      } else if (i >= Board.BOARD_CELLS_NUMBER - 16) {
+        piece = new Pawn(PIECE_COLORS.BLACK);
+      }
+
+      cells.push(new Cell(cellName, piece));
+    }
+
+    this._cells = cells;
   }
 
   /**

@@ -1,0 +1,29 @@
+.board {
+  table {
+    // border: 1px solid white;
+
+    tr {
+      td {
+        border: 1px solid white;
+        width: 4.5rem;
+        height: 4.5rem;
+        text-align: center;
+
+        &.header {
+          border: none;
+        }
+      }
+
+      td:hover {
+        background-color: #2d2e33;
+        cursor: pointer;
+      }
+
+      &.header {
+        td {
+          border: none;
+        }
+      }
+    }
+  }
+}

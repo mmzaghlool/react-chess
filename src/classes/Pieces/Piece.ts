@@ -2,8 +2,14 @@ export default abstract class Piece {
   constructor(
     protected moves: PIECE_MOVES[],
     protected attackMoves: PIECE_MOVES[],
-    protected color: PIECE_COLORS
+    protected firstMove: PIECE_MOVES[],
+    protected color: PIECE_COLORS,
+    protected _render: string
   ) {}
+
+  public get render(): string {
+    return this._render;
+  }
 }
 
 export enum PIECE_MOVES {
