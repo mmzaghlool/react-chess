@@ -2866,6 +2866,11 @@ cliui@^7.0.2:
     strip-ansi "^6.0.0"
     wrap-ansi "^7.0.0"
 
+cm-chessboard@^3.16.4:
+  version "3.16.4"
+  resolved "https://registry.yarnpkg.com/cm-chessboard/-/cm-chessboard-3.16.4.tgz#87fdfba83a0dd033f17ad21098bd856c7fb287af"
+  integrity sha512-1ygPZoPjblVQesNhc5VLcAIofnqB5Ge+znZCyByOucBVSw4XhNsOa1AW1zmoQPRMTSXPU+NHwVZiJDrI2VxK6w==
+
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
