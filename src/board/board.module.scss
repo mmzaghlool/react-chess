@@ -1,29 +1,32 @@
 .board {
-  table {
-    // border: 1px solid white;
+    table {
+        tr {
+            td {
+                border: 1px solid white;
+                width: 4.5rem;
+                height: 4.5rem;
+                text-align: center;
 
-    tr {
-      td {
-        border: 1px solid white;
-        width: 4.5rem;
-        height: 4.5rem;
-        text-align: center;
+                &.header {
+                    border: none;
+                }
 
-        &.header {
-          border: none;
+                &.selected {
+                    border: 1px solid #0000ff;
+                    background-color: #0000ff33;
+                }
+            }
+
+            td:hover {
+                background-color: #2d2e33;
+                // cursor: pointer;
+            }
+
+            &.header {
+                td {
+                    border: none;
+                }
+            }
         }
-      }
-
-      td:hover {
-        background-color: #2d2e33;
-        cursor: pointer;
-      }
-
-      &.header {
-        td {
-          border: none;
-        }
-      }
     }
-  }
 }

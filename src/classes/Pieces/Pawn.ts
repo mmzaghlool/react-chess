@@ -1,13 +1,15 @@
-import Piece, { PIECE_COLORS, PIECE_MOVES } from "./Piece";
+import Piece, { pieceMovesType, PIECE_COLORS, PIECE_MOVES } from './Piece';
 
 export default class Pawn extends Piece {
-  constructor(color: PIECE_COLORS) {
-    const moves: PIECE_MOVES[] = [PIECE_MOVES.FORWARD];
-    const attackMoves: PIECE_MOVES[] = [PIECE_MOVES.FORWARD_LEFT, PIECE_MOVES.FORWARD_RIGHT];
-    // FIXME:
-    const firstMove: PIECE_MOVES[] = [PIECE_MOVES.FORWARD_LEFT, PIECE_MOVES.FORWARD_RIGHT];
-    const render = `P(${color === PIECE_COLORS.BLACK ? "B" : "W"})`;
+    constructor(color: PIECE_COLORS) {
+        const moves: pieceMovesType[] = [{ move: PIECE_MOVES.FORWARD, recurrent: 0 }];
+        const attackMoves: pieceMovesType[] = [
+            { move: PIECE_MOVES.FORWARD_LEFT, recurrent: 0 },
+            { move: PIECE_MOVES.FORWARD_RIGHT, recurrent: 0 },
+        ];
+        const firstMove: pieceMovesType[] = [{ move: PIECE_MOVES.FORWARD, recurrent: 1 }];
+        const render = `P(${color === PIECE_COLORS.BLACK ? 'B' : 'W'})`;
 
-    super(moves, attackMoves, firstMove, color, render);
-  }
+        super(color, render, moves, attackMoves, firstMove);
+    }
 }
