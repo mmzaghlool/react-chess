@@ -51,10 +51,9 @@ export default class Board {
      * TODO:
      * Get the piece in specific cell
      */
-    getCellPiece(cell: cellNames) {
-        console.log('getCellPiece');
-
-        return;
+    getCellPiece(cellName: cellNames): Piece | undefined {
+        const cell = this._cells.find((cell) => cell.name === cellName);
+        return cell && cell.piece ? cell.piece : undefined;
     }
 
     /**

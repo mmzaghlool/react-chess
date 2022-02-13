@@ -31,6 +31,9 @@ export default class Cell {
     }
 }
 
+export type cellCharType = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h';
+export type cellNumType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+
 export enum cellNames {
     'a8' = 'a8',
     'b8' = 'b8',

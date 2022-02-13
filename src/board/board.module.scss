@@ -15,6 +15,16 @@
                     border: 1px solid #0000ff;
                     background-color: #0000ff33;
                 }
+
+                &.valid-move {
+                    border: 1px solid #008000;
+                    background-color: #00800033;
+                }
+
+                &.invalid-move {
+                    border: 1px solid #ff0000;
+                    background-color: #ff000033;
+                }
             }
 
             td:hover {
